@@ -54,7 +54,7 @@
                   <option selected="true" disabled="disabled">
                     Bedrooms (All)
                   </option>
-                 {% for value in bedroom_choices.items %} 
+                 {% for key, value in bedroom_choices.items %} 
                     <option value="{{value}}">{{value}}</option>
                   {% endfor %}
                 </select>
