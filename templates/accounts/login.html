@@ -1,5 +1,6 @@
-{% extends 'base.html' %} {% load 'static' %}
-
+{% extends 'base.html' %}
+<!--  -->
+{% load static %} {% block content %}
 <section id="login" class="bg-light py-5">
   <div class="container">
     <div class="row">
@@ -9,7 +10,10 @@
             <h4><i class="fas fa-sign-in-alt"></i> Login</h4>
           </div>
           <div class="card-body">
-            <form action="index.html">
+            <!-- ALERTS -->
+            {% include 'partials/_alerts.html' %}
+            <form action="{% url 'login' %}" method="POST">
+              {% csrf_token %}
               <div class="form-group">
                 <label for="username">Username</label>
                 <input
@@ -42,3 +46,4 @@
     </div>
   </div>
 </section>
+{% endblock %}
